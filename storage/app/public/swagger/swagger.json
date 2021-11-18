@@ -1,0 +1,257 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api 123 Milhas",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": " http://alvaro_api123milhas.local:81/api"
+        },
+        {
+            "url": "http://127.0.0.1:8000/api"
+        }
+    ],
+    "paths": {
+        "/listar-voos": {
+            "post": {
+                "tags": [
+                    "ListarVoos"
+                ],
+                "description": "Resultado da consulta na rota de voos da api 123milhas",
+                "operationId": "54e1e4241284394e62a76df881530abf",
+                "requestBody": {
+                    "$ref": "#components/requestBodies/listarVoos"
+                },
+                "responses": {
+                    "200": {
+                        "$ref": "#components/responses/sucessoListarVoos"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/agrupar-voos": {
+            "post": {
+                "tags": [
+                    "AgruparVoos"
+                ],
+                "description": "Resultado do agrupamento dos voos da api 123milhas",
+                "operationId": "4f5b59c8cdd806bdb177589c7daa3972",
+                "requestBody": {
+                    "$ref": "#components/requestBodies/agruparVoos"
+                },
+                "responses": {
+                    "200": {
+                        "$ref": "#components/responses/sucessoAgruparVoos"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "responses": {
+            "sucessoListarVoos": {
+                "description": "Serão disponibilizadas as rotas da api123milhas",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "data": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number"
+                                        },
+                                        "cia": {
+                                            "type": "string"
+                                        },
+                                        "fare": {
+                                            "type": "string"
+                                        },
+                                        "flightNumber": {
+                                            "type": "string"
+                                        },
+                                        "origin": {
+                                            "type": "string"
+                                        },
+                                        "destination": {
+                                            "type": "string"
+                                        },
+                                        "departureDate": {
+                                            "type": "string"
+                                        },
+                                        "arrivalDate": {
+                                            "type": "string"
+                                        },
+                                        "departureTime": {
+                                            "type": "string"
+                                        },
+                                        "arrivalTime": {
+                                            "type": "string"
+                                        },
+                                        "classService": {
+                                            "type": "number"
+                                        },
+                                        "price": {
+                                            "type": "number"
+                                        },
+                                        "tax": {
+                                            "type": "number"
+                                        },
+                                        "outbound": {
+                                            "type": "boolean"
+                                        },
+                                        "inbound": {
+                                            "type": "boolean"
+                                        },
+                                        "duration": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "sucessoAgruparVoos": {
+                "description": "Será disponibilizo o retorno do desafio",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "data": {
+                                    "properties": {
+                                        "flights": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number"
+                                                    },
+                                                    "cia": {
+                                                        "type": "string"
+                                                    },
+                                                    "fare": {
+                                                        "type": "string"
+                                                    },
+                                                    "flightNumber": {
+                                                        "type": "string"
+                                                    },
+                                                    "origin": {
+                                                        "type": "string"
+                                                    },
+                                                    "destination": {
+                                                        "type": "string"
+                                                    },
+                                                    "departureDate": {
+                                                        "type": "string"
+                                                    },
+                                                    "arrivalDate": {
+                                                        "type": "string"
+                                                    },
+                                                    "departureTime": {
+                                                        "type": "string"
+                                                    },
+                                                    "arrivalTime": {
+                                                        "type": "string"
+                                                    },
+                                                    "classService": {
+                                                        "type": "number"
+                                                    },
+                                                    "price": {
+                                                        "type": "number"
+                                                    },
+                                                    "tax": {
+                                                        "type": "number"
+                                                    },
+                                                    "outbound": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "inbound": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "duration": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "groups": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "uniqueId": {
+                                                        "type": "number"
+                                                    },
+                                                    "totalPrice": {
+                                                        "type": "number"
+                                                    },
+                                                    "outbound": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "properties": {
+                                                                "Voo": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    },
+                                                    "inbound": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "properties": {
+                                                                "Voo": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "totalGroups": {
+                                            "type": "number"
+                                        },
+                                        "totalFlights": {
+                                            "type": "number"
+                                        },
+                                        "cheapestPrice": {
+                                            "type": "number"
+                                        },
+                                        "cheapestGroup": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
