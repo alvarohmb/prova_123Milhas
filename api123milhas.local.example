@@ -1,0 +1,35 @@
+server {
+    listen 81;
+    listen [::]:81;
+
+    # Your project path
+    root /var/www/html/;
+    index index.php index.html index.htm index.nginx-debian.html;
+    server_name api123milhas.local;
+
+
+location / {
+    index index.php index.html inde.htm;
+    if (!-e $request_filename){
+            rewrite ^(.*)$ /index.php last;
+    }
+    try_files $uri $uri/ =404;
+}
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        include fastcgi_params;
+        fastcgi_read_timeout 150;
+        # Your path php-fpm
+        fastcgi_pass unix:/run/php/php7.3-fpm.sock;
+        proxy_set_header X-Real-IP  $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+
+

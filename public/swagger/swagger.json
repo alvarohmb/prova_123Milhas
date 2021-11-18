@@ -1,0 +1,40 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentação API 123 Milhas",
+        "version": "0.1"
+    },
+    "servers": [
+        {
+            "url": "http://alvaro_api123milhas.local:81/api"
+        }
+    ],
+    "paths": {
+        "/listar-voos": {
+            "post": {
+                "tags": [
+                    "ListarVoos"
+                ],
+                "description": "Resultado da consulta na rota de voos da api 123milhas",
+                "operationId": "App\\Http\\Controllers\\VoosController::listarVoos",
+                "requestBody": {
+                },
+                "responses": {
+                    "200": {
+                        "response": 200,
+                        "description": "Voos Listados com sucesso."
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "responses": {
+        }
+    }
+}

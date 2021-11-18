@@ -1,0 +1,115 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api 123 Milhas",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": " http://alvaro_api123milhas.local:81/api"
+        },
+        {
+            "url": "http://127.0.0.1:8000/api"
+        }
+    ],
+    "paths": {
+        "/listar-voos": {
+            "post": {
+                "tags": [
+                    "ListarVoos"
+                ],
+                "description": "Consulta na rota de voos da api 123milhas",
+                "operationId": "App\\Http\\Controllers\\VoosController::listarVoos",
+                "requestBody": {
+                    "$ref": "#components/requestBodies/listarVoos"
+                },
+                "responses": {
+                    "200": {
+                        "$ref": "#components/responses/sucessoListarVoos"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "responses": {
+            "sucessoListarVoos": {
+                "description": "Resultado da consulta na rota de voos da api 123milhas",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "data": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number"
+                                        },
+                                        "cia": {
+                                            "type": "string"
+                                        },
+                                        "fare": {
+                                            "type": "string"
+                                        },
+                                        "flightNumber": {
+                                            "type": "string"
+                                        },
+                                        "origin": {
+                                            "type": "string"
+                                        },
+                                        "destination": {
+                                            "type": "string"
+                                        },
+                                        "departureDate": {
+                                            "type": "string"
+                                        },
+                                        "arrivalDate": {
+                                            "type": "string"
+                                        },
+                                        "departureTime": {
+                                            "type": "string"
+                                        },
+                                        "arrivalTime": {
+                                            "type": "string"
+                                        },
+                                        "classService": {
+                                            "type": "number"
+                                        },
+                                        "price": {
+                                            "type": "number"
+                                        },
+                                        "tax": {
+                                            "type": "number"
+                                        },
+                                        "outbound": {
+                                            "type": "boolean"
+                                        },
+                                        "inbound": {
+                                            "type": "boolean"
+                                        },
+                                        "duration": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "requestBodies": {
+            "listarVoos": {
+            }
+        }
+    }
+}
