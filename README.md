@@ -1,9 +1,14 @@
-Clone do projeto
-    git clone git@github.com:alvarohmb/prova_123Milhas.git
+* Considerando configuração para ambiente linux.
+    cd /var/www/html;
+
+    * Clone do projeto
+        sudo git clone git@github.com:alvarohmb/prova_123Milhas.git
 
 Instalação:
     composer install
     composer definir-env-dev
+    sudo chmod -R 777 /var/www/html/*
+    sudo php artisan optimize:clear
     php artisan make:swagger
 
     http://alvaro_api123milhas.local:81/documentacao
