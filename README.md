@@ -46,6 +46,7 @@ sudo chmod -R 777 /var/www/html/prova_123Milhas
     
 
     2 - Atravez do NGINX passo a passo a baixo:
+    
     ** links: 
     
     http://api123milhas.local:81
