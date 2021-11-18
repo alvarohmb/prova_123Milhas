@@ -25,20 +25,31 @@
             sudo php artisan optimize:clear
             php artisan key:generate
             php artisan make:swagger
+            sudo chmod -R 777 /var/www/html/prova_123Milhas
+        * link da documentação:
+            http://alvaro_api123milhas.local:81/documentacao
 
-    http://alvaro_api123milhas.local:81/documentacao
+        * Forma de utilização:
+            1 - php artisan serve
+                http://127.0.0.1:8000
+                http://127.0.0.1:8000/documentacao
 
-Configuracao Ambiente ( caso utilize o NGINX como Eu ):
-    sudo cp api123milhas.local.example /etc/nginx/sites-available/api123milhas.local
+            2 - Atravez do NGINX passo a passo a baixo:
+                http://api123milhas.local:81
+                http://api123milhas.local:81/documentacao
 
-    sudo vim /etc/nginx/sites-available/api123milhas.local
-        * Trocar o caminho do projeto, +- na linha 6.
-        * Ficar algo parecido com: root /var/www/html/prova_123Milhas/public;
+            Configuracao Ambiente ( caso utilize o NGINX como Eu ):
+                cd /var/www/html/prova_123Milhas
+                sudo cp api123milhas.local.example /etc/nginx/sites-available/api123milhas.local
+                cd /etc/nginx/sites-available
+                sudo vim api123milhas.local
+                    * Trocar o caminho do projeto, +- na linha 6.
+                    * Ficar algo parecido com: root /var/www/html/prova_123Milhas/public;
 
-    cd /etc/nginx/sites-enabled
-    sudo ln -s /etc/nginx/sites-available/api123milhas.local
-    sudo vim /etc/hosts
-        * Adicionar o seu hosts
-    127.0.0.1   api123milhas.local
+                cd /etc/nginx/sites-enabled
+                sudo ln -s /etc/nginx/sites-available/api123milhas.local
+                sudo vim /etc/hosts
+                    * Adicionar o seu hosts
+                127.0.0.1   api123milhas.local
 
-    sudo service nginx restart
+                sudo service nginx restart
