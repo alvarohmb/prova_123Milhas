@@ -1,15 +1,30 @@
 * Considerando configuração para ambiente linux.
-    cd /var/www/html;
 
-    * Clone do projeto
-        sudo git clone git@github.com:alvarohmb/prova_123Milhas.git
+    * Verifica se já exite chave cadastrada
+        https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys
 
-Instalação:
-    composer install
-    composer definir-env-dev
-    sudo chmod -R 777 /var/www/html/*
-    sudo php artisan optimize:clear
-    php artisan make:swagger
+    * Gerar uma nova chave.
+        https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+    * Adicione ela no seu git hub.
+        https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+
+
+    * Apos chave ssh configurada.
+        * Ir para a pasta do projeto
+            cd /var/www/html
+
+        * Clone do projeto
+            git clone git@github.com:alvarohmb/prova_123Milhas.git
+
+        * Instalação:
+            cd prova_123Milhas/
+            composer install
+            sudo chmod -R 777 /var/www/html/prova_123Milhas
+            composer definir-env-dev
+            sudo php artisan optimize:clear
+            php artisan key:generate
+            php artisan make:swagger
 
     http://alvaro_api123milhas.local:81/documentacao
 
