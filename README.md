@@ -32,7 +32,7 @@ sudo chmod -R 777 /var/www/html/prova_123Milhas
 
 * Forma de utilização:
 
-    1 - Atraves do proprio server gerado pelo laravel
+    Atraves do proprio server gerado pelo laravel
 
     ```
     php artisan serve
@@ -43,39 +43,3 @@ sudo chmod -R 777 /var/www/html/prova_123Milhas
     http://127.0.0.1:8000
 
     http://127.0.0.1:8000/documentacao
-
-
-    2 - Atravez do NGINX passo a passo a baixo:
-    ** links:
-
-    http://api123milhas.local:81
-
-    http://api123milhas.local:81/documentacao
-
-
-* Configuracao Ambiente ( caso utilize o NGINX como Eu ):
-    ```
-    cd /var/www/html/prova_123Milhas
-    sudo cp api123milhas.local.example /etc/nginx/sites-available/api123milhas.local
-    cd /etc/nginx/sites-available
-    sudo vim api123milhas.local
-    ```
-    * Trocar o caminho do projeto, +- na linha 6.
-
-    * Ficar algo parecido com: root /var/www/html/prova_123Milhas/public;
-
-    ```
-    cd /etc/nginx/sites-enabled
-    sudo ln -s /etc/nginx/sites-available/api123milhas.local
-    sudo vim /etc/hosts
-    ```
-
-    * Adicionar o seu hosts
-    ```
-    127.0.0.1   api123milhas.local
-    ```
-
-    * Reiniciando Servico
-    ```
-    sudo service nginx restart
-    ```
