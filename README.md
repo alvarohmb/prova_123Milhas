@@ -2,7 +2,7 @@
 Fluxo chave SSH
 * Verifica se já exite chave cadastrada:
 ```
-https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys   
+https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys
 ```
 * Gerar uma nova chave.
 ```
@@ -33,25 +33,25 @@ sudo chmod -R 777 /var/www/html/prova_123Milhas
 * Forma de utilização:
 
     1 - Atraves do proprio server gerado pelo laravel
-    
+
     ```
     php artisan serve
     ```
-    
-    ** links: 
-    
+
+    ** links:
+
     http://127.0.0.1:8000
-    
+
     http://127.0.0.1:8000/documentacao
-    
+
 
     2 - Atravez do NGINX passo a passo a baixo:
-    ** links: 
-    
+    ** links:
+
     http://api123milhas.local:81
-    
+
     http://api123milhas.local:81/documentacao
-        
+
 
 * Configuracao Ambiente ( caso utilize o NGINX como Eu ):
     ```
@@ -61,7 +61,7 @@ sudo chmod -R 777 /var/www/html/prova_123Milhas
     sudo vim api123milhas.local
     ```
     * Trocar o caminho do projeto, +- na linha 6.
-    
+
     * Ficar algo parecido com: root /var/www/html/prova_123Milhas/public;
 
     ```
@@ -69,12 +69,12 @@ sudo chmod -R 777 /var/www/html/prova_123Milhas
     sudo ln -s /etc/nginx/sites-available/api123milhas.local
     sudo vim /etc/hosts
     ```
-    
+
     * Adicionar o seu hosts
     ```
     127.0.0.1   api123milhas.local
     ```
-    
+
     * Reiniciando Servico
     ```
     sudo service nginx restart

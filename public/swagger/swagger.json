@@ -6,7 +6,7 @@
     },
     "servers": [
         {
-            "url": "http://alvaro_api123milhas.local:81/api"
+            "url": "http://api123milhas.local:81/api"
         }
     ],
     "paths": {
